@@ -1,0 +1,101 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+#wrapper{
+    /* to set 100 % of viewheight */
+    height:100vh;
+    /* to not allow move in x direction */
+    overflow-x:hidden;
+    /* to allow movement in y direction */
+    overflow-y:auto;
+    /* opening 3 rd axis since we have to deal with it and can give any value */
+    perspective: 10px;
+
+}
+.container{
+    /* making container non static so that we can move its element relatively  to it*/
+    position:relative;
+    display:flex;
+    /* making all elements at centre */
+    align-items: center;
+    justify-content: center;
+    /* explicitly telling to preserve 3d effect where to want to apply */
+    transform-style: preserve-3d;
+    height:100%;
+    /* to tell which images to overlapp default value 0 */
+    z-index: -1;
+}
+.mountainimage,.manstanding{
+    /* for overlapping */
+    position:absolute;
+    /* to fix image in whole to avoid scrolling for seeing full image */
+    height:100%;
+    width:100%;
+    /* to move all these one layer behind or moving ADVENTURE one layer ahead */
+    z-index:-1;
+    /* to fit image in container or cover all width of container */
+    object-fit: cover;
+}
+.mountainimage{
+    /* to move deep in z axis */
+    transform:translateZ(-40px) scale(6) ;
+}
+.manstanding{
+    /* to move deep in z axis */
+    transform:translateZ(-20px) scale(3) ;
+}
+h1{
+    position:absolute;
+    top:5rem;
+    font-size: 10rem;
+    letter-spacing: 4px;
+    color:white;
+    text-shadow: 0 0 10 rgba(0, 0,0, 0.3);
+
+}
+section{
+    padding:5rem 0;
+    color:white;
+    background-color: rgb(45,45,45);
+}
+.bg1{
+    background-image: url(sport-1.png);
+}
+.bg2{
+    background-image: url(sport-2.jpg);
+}
+.bg3{
+    background-image: url(sport-3.jpg);
+}
+.secheading{
+    font-size:5rem;
+    padding:0 10rem;
+}
+.text{
+    font-size: 1.5rem;
+    padding:0 10rem;
+    margin: 5rem 0;
+}
+.bg{
+    position:relative;
+    width:100%;
+    /* to make background fixed and let things to scroll over them */
+    background-attachment: fixed;
+    height: 500px;
+    background-size:cover;
+    background-position: centre;
+
+}
+.desc{
+    position:absolute;
+    background-color: white;
+    padding:0.5rem 2.5rem;
+    top:50%;
+    left:50%;
+    transform: translateX(-50%) translateX(-50%);
+    color:black;
+    font-size: 3.5rem;
+    font-weight:600;
+}
